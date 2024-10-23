@@ -11,13 +11,11 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
 import com.sesi.login.model.Papel;
 import com.sesi.login.model.Usuario;
 import com.sesi.login.repository.UsuarioRepository;
 
-@Service
 public class DetalhesUsuarioService implements UserDetailsService{
 
 	@Autowired
@@ -25,7 +23,7 @@ public class DetalhesUsuarioService implements UserDetailsService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String nomeUsuario) throws UsernameNotFoundException {
-		Usuario usuario = usuarioRepository.findByNomeUsuario(nomeUsuario);
+		Usuario usuario = usuarioRepository.findbyNomeUsuario(nomeUsuario);
 		if(usuario == null) {
 			throw new UsernameNotFoundException("usuario não encontrado");
 		}

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.sesi.login.model.Papel;
 
 public interface PapelRepository extends JpaRepository<Papel, Integer>{
-	Papel findByNomePapel(String nomePapel);
+	Papel findbyNomePapel(String nomePapel);
 }
